@@ -39,4 +39,4 @@ The services will run in the background until you cd into this directory and run
 
 
 ### `docker-compose build`
-If you containered services are not behaving the way that you would expect run this command to rebuild all the containers. Then when you run docker-compose up it will use these fresh docker images.
+If your containered services are not behaving the way that you would expect run this command to rebuild all the containers. Then when you run docker-compose up it will use these fresh docker images.
