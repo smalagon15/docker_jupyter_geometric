@@ -1,6 +1,6 @@
 # Docker Jupyter Geometric
 
-Hey all, Sam here, apologies for the following diatribe. I'm a full stack software engineer doing graduate work in mathematics. Specifically mathematical modeling. As a software engineer navigating the data science space, I have noticed that several of the approaches don't take advantage of current technologies and instead recreate the wheel. Namely the lack of database usage, structuring the project as an application instead of collection of scripts, not having a clear way to interact with the trained results, and not leveraging containerized environments.
+Hey all, Sam here, apologies for the following diatribe. I'm a full stack software engineer doing graduate work in mathematics. Specifically mathematical modeling. As a software engineer navigating the data science space, I have noticed that several of the approaches don't take advantage of current technologies and instead recreate the wheel. Namely the lack of database usage, structuring the project as a collection of scripts instead of as an application (api), not having a clear way to interact with the trained results, and not leveraging containerized environments.
  
 This is just a containerized implementation of data science development in jupyter notebook leveraging neo4j as a database. The jupyter tutorial that we are focusing on is a list of tutorials on geometric learning using pytorch. Please refer to [Pytorch geometric](https://github.com/rusty1s/pytorch_geometric) for further information.
 
