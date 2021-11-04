@@ -8,8 +8,8 @@ RUN mkdir /notebook
 
 # Copy in the project
 COPY . /notebook/
-RUN pip install --upgrade pip setuptools wheel
 RUN pip install -r /notebook/requirements.txt
+RUN conda install pyg -c pyg -c conda-forge
 
 # Add Tini. Tini operates as a process subreaper for jupyter. This prevents kernel crashes.
 ENV TINI_VERSION v0.6.0
@@ -19,4 +19,4 @@ ENTRYPOINT ["/usr/bin/tini", "--"]
 
 EXPOSE 8888
 
-ENTRYPOINT ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root", "--NotebookApp.token=password12", "--notebook-dir=/notebook/"]
+ENTRYPOINT ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root", "--NotebookApp.token=password12","--NotebookApp.password=password12", "--notebook-dir=/notebook/"]
