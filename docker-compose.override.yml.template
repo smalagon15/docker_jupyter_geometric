@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  jupyter:
+    # Copy and rename to docker-compose.override.yml for GPU usage
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: all
+            capabilities: [gpu]

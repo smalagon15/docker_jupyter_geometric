@@ -2,3 +2,4 @@ neo4j/
 data/
 *.dat
 pytorch_geometric/.Trash*
+docker-compose.override.yml

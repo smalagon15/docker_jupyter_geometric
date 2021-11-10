@@ -22,13 +22,6 @@ services:
   jupyter:
     container_name: jupyter
     build: ./pytorch_geometric/
-    deploy:
-      resources:
-        reservations:
-          devices:
-          - driver: nvidia
-            count: all
-            capabilities: [gpu]
     volumes:
       - ./pytorch_geometric/:/notebook/
     ports:
