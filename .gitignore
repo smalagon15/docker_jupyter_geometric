@@ -3,3 +3,4 @@ data/
 *.dat
 pytorch_geometric/.Trash*
 docker-compose.override.yml
+*__pycache__/

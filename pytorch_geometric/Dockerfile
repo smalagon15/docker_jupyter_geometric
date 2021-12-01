@@ -5,9 +5,14 @@ RUN apt-get update && apt-get install --no-install-recommends --no-install-sugge
 RUN apt-get install -y unzip gcc g++
 # Make project and results directory
 RUN mkdir /notebook
+RUN mkdir /drivers
 
-# Copy in the project
-COPY . /notebook/
+# Copy in the project and drivers
+COPY ./pytorch_geometric/ /notebook/
+COPY ./drivers/ /drivers/
+
+# Install dependencies and set up environmental install for drivers
+RUN pip install -e /drivers
 RUN pip install -r /notebook/requirements.txt
 RUN conda install pyg -c pyg -c conda-forge
 

@@ -1,6 +1,7 @@
 version: '3.7'
 services:
   neo4j:
+    container_name: geometric_neo4j
     image: neo4j:3.5
     restart: unless-stopped
     ports:
@@ -9,8 +10,8 @@ services:
     networks:
       - geometric
     volumes:
-      - ./neo4j/conf:/conf
       - geometric_neo4j:/data
+      - ./neo4j/conf:/conf
       - ./neo4j/import:/import
       - ./neo4j/logs:/logs
       - ./neo4j/plugins:/plugins
@@ -21,9 +22,12 @@ services:
       - NEO4J_dbms_memory_heap_max__size=1G
   jupyter:
     container_name: jupyter
-    build: ./pytorch_geometric/
+    build:
+       context: .
+       dockerfile: ./pytorch_geometric/Dockerfile
     volumes:
       - ./pytorch_geometric/:/notebook/
+      - ./drivers/:/drivers/
     ports:
       - 8888:8888
     networks:
