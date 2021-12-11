@@ -2,7 +2,7 @@ version: '3.7'
 services:
   neo4j:
     container_name: geometric_neo4j
-    image: neo4j:3.5
+    image: neo4j:4.4
     restart: unless-stopped
     ports:
       - 7474:7474
